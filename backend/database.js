@@ -1,5 +1,5 @@
 var mysql=require('mysql2');
-require('dotenv').config();
+require('dotenv').config({path:'../.env'});
 
 const connection = mysql.createConnection({
     host: process.env.db_host, // Replace with Railway host

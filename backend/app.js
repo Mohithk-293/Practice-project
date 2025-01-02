@@ -5,8 +5,9 @@ const cors = require('cors');
 const app = express();
 const connection=require('./database')
 const { spawn } = require('child_process');
+const userRoute=require('./routes/users')
  
-require('dotenv').config();
+require('dotenv').config({path:'../.env'});
 
 
 connection.connect((err) => {
@@ -25,6 +26,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/user',userRoute)
 
 console.log("helllooo");
 
