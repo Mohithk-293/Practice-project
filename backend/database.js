@@ -1,11 +1,12 @@
 var mysql=require('mysql2');
+require('dotenv').config();
 
 const connection = mysql.createConnection({
-    host: 'autorack.proxy.rlwy.net', // Replace with Railway host
-    user: 'root', // Replace with Railway user
-    password: 'dYUGuPqVOFXjsFHtUrqqNpDrzCIsMLBB', // Replace with Railway password
-    database: 'railway', // Replace with Railway database name
-    port: 30882 // Replace with Railway port
+    host: process.env.db_host, // Replace with Railway host
+    user: process.env.db_user, // Replace with Railway user
+    password: process.env.db_password, // Replace with Railway password
+    database: process.env.db_database, // Replace with Railway database name
+    port: process.env.db_port // Replace with Railway port
   });
 
 module.exports=connection;
