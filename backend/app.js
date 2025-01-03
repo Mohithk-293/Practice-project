@@ -13,6 +13,7 @@ require('dotenv').config({path:'../.env'});
 connection.connect((err) => {
   if (err) {
     console.log(err);
+    console.log("hiiiiiiiii");
     console.error('Error connecting to the database:');
   } else {
     console.log('Connected to the database!');
